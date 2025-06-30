@@ -1,11 +1,6 @@
 <div align="center">
   <h1>EventSurge</h1>
   <p>A lightweight and flexible event management plugin for Minecraft servers</p>
-
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Spigot](https://img.shields.io/badge/Spigot-1.16.5--1.20.x-orange.svg)](https://www.spigotmc.org/resources/eventsurge.xxxxx/)
-  [![Downloads](https://img.shields.io/spiget/downloads/xxxxx)](https://www.spigotmc.org/resources/eventsurge.xxxxx/)
-  [![Rating](https://img.shields.io/spiget/rating/xxxxx)](https://www.spigotmc.org/resources/eventsurge.xxxxx/)
 </div>
 
 ## Features
@@ -85,8 +80,6 @@ diamond_miner:
   reward:
     command: "give %player% netherite_ingot 2"
     display: "2x Netherite Ingot"
-
-# More examples in the wiki
 ```
 </details>
 
