@@ -5,11 +5,9 @@
 
 ---
 Here’s an updated **README.md** draft for EventSurge v2.1.0, reflecting all the new features, fixes, and improvements—including auto-extracted events, multi-language support, and more.  
-**You can copy-paste this directly!**
 ---
 
 ## 🚀 What's New in 2.1.0
-- **Auto-Extract Events File** – `events.yml` is now automatically generated in the plugin folder on first install, no manual copying needed!
 - **Double Progress FIXED** – No more double progress bugs for global or per-player events; event listeners are guaranteed to be registered only once.
 - **Global/Community Event Sync** – Global event progress is truly collective and rewards are only given to contributors.
 - **Full Multi-Language Support** – All plugin messages (events, help, commands, etc.) are now fully translatable, including the `/eventsurge lang <lang>` command.
@@ -21,7 +19,6 @@ Here’s an updated **README.md** draft for EventSurge v2.1.0, reflecting all th
 - **Placeholder & Reload Improvements** – All message placeholders are consistent, and config/language reloads are truly runtime.
 - **Event Without Reward** – Events without rewards are now loaded (with a warning), not skipped.
 - **Improved Listener Management** – Event listeners are registered/unregistered correctly, preventing duplicate handlers.
-- **Stability & Performance** – Improved initialization order, event validation, and error handling for better reliability.
 
 ---
 
