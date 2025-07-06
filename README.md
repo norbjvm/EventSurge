@@ -4,21 +4,24 @@
 </div>
 
 ---
+Here’s an updated **README.md** draft for EventSurge v2.1.0, reflecting all the new features, fixes, and improvements—including auto-extracted events, multi-language support, and more.  
+**You can copy-paste this directly!**
+---
 
-## 🚀 What's New in 2.0.0
-- Block placing events (NEW!)
-- Custom event builder (in-chat, with GUI trigger)
-- Multiple objectives per event
-- Time limits for events
-- Optional message prefix (configurable)
-- Money and command rewards (Vault support)
-- Community events (server-wide progress/rewards)
-- Allow multiple events to run simultaneously (configurable)
-- Improved GUI (event selection, custom event trigger)
-- Enhanced progress/info commands (support multiple active events)
-- Player event history and achievement tracking
-- Debug mode for admins (detailed logging)
-- Improved error handling, validation, and performance
+## 🚀 What's New in 2.1.0
+- **Auto-Extract Events File** – `events.yml` is now automatically generated in the plugin folder on first install, no manual copying needed!
+- **Double Progress FIXED** – No more double progress bugs for global or per-player events; event listeners are guaranteed to be registered only once.
+- **Global/Community Event Sync** – Global event progress is truly collective and rewards are only given to contributors.
+- **Full Multi-Language Support** – All plugin messages (events, help, commands, etc.) are now fully translatable, including the `/eventsurge lang <lang>` command.
+- **Built-in Language Files** – Comes with English, Spanish, Indonesian, French, and German language files out of the box!
+- **Dynamic Help & Command Messages** – Help/command messages are loaded from language files and displayed in the selected language.
+- **Modern GUI Layout** – The event GUI now shows only 3 main categories in the center, with sub-GUIs for each category.
+- **More Example Events** – Many new example global and community events (mining, killing, fishing, crafting, placing, custom) included in `events.yml`, ready to use.
+- **Debug Mode Toggle** – Debug logging can now be enabled/disabled via `config.yml` (`debug: true/false`).
+- **Placeholder & Reload Improvements** – All message placeholders are consistent, and config/language reloads are truly runtime.
+- **Event Without Reward** – Events without rewards are now loaded (with a warning), not skipped.
+- **Improved Listener Management** – Event listeners are registered/unregistered correctly, preventing duplicate handlers.
+- **Stability & Performance** – Improved initialization order, event validation, and error handling for better reliability.
 
 ---
 
@@ -44,13 +47,14 @@
   - Broadcast announcements
   - Community/server-wide rewards
 - **User-friendly & Flexible**
-  - Simple configuration (config.yml, events.yml)
+  - Simple configuration (`config.yml`, `events.yml`)
   - Tab completion & intuitive commands
   - GUI event manager
   - Player event history
   - Debug mode for admins
   - Allow multiple events at once (configurable)
   - Optional message prefix
+  - **Multi-language support** (EN, ES, ID, FR, DE)
 - **Performance & Quality**
   - Async operations
   - Detailed logging & error handling
@@ -97,6 +101,7 @@ beacon_builder:
 | `/eventsurge start <event>` | Start an event | eventsurge.admin |
 | `/eventsurge stop` | Stop all active events | eventsurge.admin |
 | `/eventsurge reload` | Reload configuration | eventsurge.admin |
+| `/eventsurge lang <lang>` | Change plugin language at runtime | eventsurge.admin |
 
 ---
 
@@ -116,6 +121,7 @@ beacon_builder:
 ```yaml
 # Basic plugin settings
 broadcast-prefix: "&6[EventSurge] &f"
+debug: false
 
 messages:
   event-start: "&aEvent has started: %event%"
@@ -124,8 +130,8 @@ messages:
 
 allow-multiple-events: true  # Allow multiple events to run at the same time
 
-auto-start: true
-interval-seconds: 1800  # 30 minutes
+# Language and auto-extract
+language: "en"
 ```
 </details>
 
