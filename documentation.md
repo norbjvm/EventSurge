@@ -18,13 +18,15 @@ Example of event completion messages, item rewards, and active event info displa
 
 ### 3. Multiple Active Events Display
 Display of `/es info` showing several active events at once, with description, target, and reward for each.
-![Multiple Active Events](./screenshots/active-events.png)
+![Multiple Active Events]
+
 ![2025-07-06_09 39 06](https://github.com/user-attachments/assets/6bcdd7ee-9b96-4afd-b42a-3e4b23140ba4)
 
 
 ### 4. Custom Event GUI
 GUI for creating custom events, highlighting main features: multiple objectives, time limits, money rewards, custom commands.
-![Custom Event GUI](./screenshots/custom-event-gui.png)
+![Custom Event GUI]
+
 ![2025-07-06_09 20 48](https://github.com/user-attachments/assets/f203e175-ff9e-47d0-ba9b-75840e150dd0)
 ---
 ## Overview
