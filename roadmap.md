@@ -2,7 +2,7 @@
 
 This document outlines the planned development path for EventSurge. Features and timelines may change based on community feedback and development priorities.
 
-## Current Version: 2.0.0
+## Current Version: 2.1.0
 - Powerful event system
 - Mining, Killing, Fishing, Crafting, and Block Placing events
 - Custom event builder (in-chat, with GUI trigger)
@@ -15,6 +15,10 @@ This document outlines the planned development path for EventSurge. Features and
 - Enhanced progress tracking
 - Command-based and GUI management
 - Configurable via config.yml and events.yml
+- **Multi-language support** - English, Spanish, Indonesian, French, German
+- **Debug mode toggle** - Enable detailed logging for troubleshooting
+- **Global & Community Event Sync** - Server-wide progress and rewards
+- **Improved GUI** - Better event info, status, and creation tools
 
 ---
 
@@ -47,7 +51,14 @@ This document outlines the planned development path for EventSurge. Features and
 - [x] Improved error handling and validation
 - [x] Documentation and migration guide
 
-### Version 2.1.0 - Event Enhancement & Quality of Life
+### Version 2.1.0 - Event Enhancement & Quality of Life (COMPLETED)
+- [x] Double progress bug fix - No more double counting or duplicate listeners
+- [x] Global & Community Event Sync - Server-wide progress and rewards
+- [x] Multi-language support - English, Spanish, Indonesian, French, German
+- [x] Improved GUI - Better event info, status, and creation tools
+- [x] Debug mode toggle - Enable detailed logging for troubleshooting
+- [x] More config options - Fine-tune event, GUI, and reward settings
+- [x] Performance & Quality - Faster, more robust, and easier to use
 - [ ] PvP events
 - [ ] Trading events with villagers
 - [ ] Exploration events
@@ -56,7 +67,6 @@ This document outlines the planned development path for EventSurge. Features and
 - [ ] Progress actionbar
 - [ ] Basic Leaderboard (top players per event, all-time stats, weekly/monthly rankings)
 - [ ] More GUI improvements (event preview, event info, player progress)
-- [ ] Multi-language support
 - [ ] More detailed logging
 - [ ] Backup system
 
@@ -108,7 +118,7 @@ This document outlines the planned development path for EventSurge. Features and
 ### Quality of Life
 - [x] Better error handling
 - [x] More detailed logging
-- [ ] Multi-language support
+- [x] Multi-language support
 - [ ] Backup system
 
 ### Documentation
@@ -121,4 +131,4 @@ This document outlines the planned development path for EventSurge. Features and
 
 Note: This roadmap is subject to change based on community feedback and development priorities. Features may be added, removed, or modified as needed.
 
-Last updated: 6 July 2025 
+Last updated: 7 July 2025
