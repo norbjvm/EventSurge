@@ -24,9 +24,8 @@ EventSurge now supports:
 - **German** (de)
 
 **How to change language:**
-1. Open `config.yml`
-2. Set `language: "es"` (or `en`, `id`, `fr`, `de`)
-3. Reload the plugin: `/eventsurge reload`
+1. Use the command: /es lang <lang>  |  Example: /es lang es
+2. Make sure the language file exists in the folder: /plugins/EventSurge/lang/
 
 You can also customize any message by editing the language files in `lang/`.
 
