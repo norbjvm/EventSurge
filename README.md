@@ -59,35 +59,6 @@ Here’s an updated **README.md** draft for EventSurge v2.1.0, reflecting all th
 
 ---
 
-## Quick Start
-```yaml
-# Create your first event in events.yml
-zombie_hunter:
-  type: kill
-  target: ZOMBIE
-  amount: 20
-  title: "Zombie Hunter"
-  description: "Hunt down 20 zombies!"
-  broadcast: true
-  reward:
-    command: "give %player% diamond 5"
-    display: "5x Diamond"
-
-# Example block placing event
-beacon_builder:
-  type: place
-  target: BEACON
-  amount: 3
-  title: "Beacon Builder"
-  description: "Place 3 beacons!"
-  broadcast: true
-  reward:
-    money: 10000
-    display: "$10000"
-```
-
----
-
 ## Commands
 | Command | Description | Permission |
 |---------|-------------|------------|
