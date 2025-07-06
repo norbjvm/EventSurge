@@ -4,62 +4,117 @@
 </div>
 
 ---
-Here’s an updated **README.md** draft for EventSurge v2.1.0, reflecting all the new features, fixes, and improvements—including auto-extracted events, multi-language support, and more.  
----
 
 ## 🚀 What's New in 2.1.0
-- **Double Progress FIXED** – No more double progress bugs for global or per-player events; event listeners are guaranteed to be registered only once.
-- **Global/Community Event Sync** – Global event progress is truly collective and rewards are only given to contributors.
-- **Full Multi-Language Support** – All plugin messages (events, help, commands, etc.) are now fully translatable, including the `/eventsurge lang <lang>` command.
-- **Built-in Language Files** – Comes with English, Spanish, Indonesian, French, and German language files out of the box!
-- **Dynamic Help & Command Messages** – Help/command messages are loaded from language files and displayed in the selected language.
-- **Modern GUI Layout** – The event GUI now shows only 3 main categories in the center, with sub-GUIs for each category.
-- **More Example Events** – Many new example global and community events (mining, killing, fishing, crafting, placing, custom) included in `events.yml`, ready to use.
-- **Debug Mode Toggle** – Debug logging can now be enabled/disabled via `config.yml` (`debug: true/false`).
-- **Placeholder & Reload Improvements** – All message placeholders are consistent, and config/language reloads are truly runtime.
-- **Event Without Reward** – Events without rewards are now loaded (with a warning), not skipped.
-- **Improved Listener Management** – Event listeners are registered/unregistered correctly, preventing duplicate handlers.
+- **Double progress bug fixed**: No more double counting or duplicate listeners
+- **Global & Community Event Sync**: Server-wide progress and rewards, with new global event types
+- **Full Multi-Language Support**: Built-in English, Spanish, Indonesian, French, and German (see below)
+- **Improved GUI**: Better event info, status, and creation tools
+- **Debug Mode Toggle**: Enable detailed logging for troubleshooting
+- **More Config Options**: Fine-tune event, GUI, and reward settings
+
+---
+
+## 🌍 Multi-Language Support
+EventSurge now supports:
+- **English** (en)
+- **Spanish** (es)
+- **Indonesian** (id)
+- **French** (fr)
+- **German** (de)
+
+**How to change language:**
+1. Open `config.yml`
+2. Set `language: "es"` (or `en`, `id`, `fr`, `de`)
+3. Reload the plugin: `/eventsurge reload`
+
+You can also customize any message by editing the language files in `lang/`.
 
 ---
 
 ## Features
-- **Multiple Event Types**
-  - Mining events
-  - Kill events
-  - Fishing events
-  - Crafting events
-  - Block placing events
-  - Custom events (with builder)
-- **Custom Event Builder**
-  - Create any event in-game (in-chat, with GUI trigger)
-  - Set type, objectives, time limit, rewards, and more
-- **Real-time Progress Tracking**
-  - Visual progress bars
-  - Automatic completion detection
-  - Player-specific progress
-  - Multiple objectives per event
-- **Reward System**
-  - Automatic reward distribution
-  - Money (Vault), command, and display rewards
-  - Broadcast announcements
-  - Community/server-wide rewards
-- **User-friendly & Flexible**
-  - Simple configuration (`config.yml`, `events.yml`)
-  - Tab completion & intuitive commands
-  - GUI event manager
-  - Player event history
-  - Debug mode for admins
-  - Allow multiple events at once (configurable)
-  - Optional message prefix
-  - **Multi-language support** (EN, ES, ID, FR, DE)
-- **Performance & Quality**
-  - Async operations
-  - Detailed logging & error handling
-  - Supports all modern Minecraft versions
+- **Multiple Event Types**: Mining, Killing, Fishing, Crafting, Placing, and Custom events
+- **Custom Event Builder**: Create any event in-game (in-chat, with GUI trigger)
+- **Real-time Progress Tracking**: Visual bars, auto-completion, player-specific and community progress
+- **Reward System**: Money (Vault), command, and display rewards, with broadcast announcements
+- **Community & Global Events**: Server-wide progress and rewards
+- **User-friendly & Flexible**: Simple config, tab completion, GUI manager, player history, debug mode, multi-language
+- **Performance & Quality**: Async operations, detailed logging, error handling, supports all modern Minecraft versions
 
 ---
 
-## Commands
+## 🏁 Quick Start
+```yaml
+# config.yml (snippet)
+debug: false
+language: "en"
+broadcast-prefix: "&6[EventSurge] &f"
+prefix-settings:
+  use-prefix-by-default: true
+  show-prefix-in-rewards: true
+  show-prefix-in-descriptions: false
+allow-multiple-events: true
+# ... more options below
+```
+
+```yaml
+# events.yml (snippet)
+events:
+  diamond_miner:
+    type: mine
+    target: DIAMOND_ORE
+    amount: 10
+    title: "💎 Diamond Miner"
+    description: "Mine 10 diamond ores to prove your mining skills!"
+    broadcast: true
+    use-prefix: true
+    duration-minutes: 30
+    allow-multiple: false
+    reward:
+      command: "give %player% netherite_ingot 2"
+      display: "2x Netherite Ingot"
+      money: 1000
+
+  mixed_mining:
+    type: custom
+    target: mine
+    title: "🏔️ Mixed Mining Challenge"
+    description: "Mine different types of valuable ores!"
+    broadcast: true
+    use-prefix: true
+    duration-minutes: 120
+    allow-multiple: true
+    objectives:
+      DIAMOND_ORE: 5
+      EMERALD_ORE: 10
+      GOLD_ORE: 20
+    reward:
+      command: "give %player% netherite_block 1"
+      display: "1x Netherite Block"
+      money: 2000
+
+  community_mining:
+    type: custom
+    target: mine
+    title: "🏆 Community Mining Challenge"
+    description: "Work together to mine massive amounts of resources!"
+    broadcast: true
+    use-prefix: true
+    duration-minutes: 180
+    allow-multiple: true
+    objectives:
+      DIAMOND_ORE: 100
+      EMERALD_ORE: 200
+      GOLD_ORE: 500
+    reward:
+      command: "give %player% netherite_ingot 10"
+      display: "10x Netherite Ingot"
+      money: 5000
+```
+
+---
+
+## 🕹️ Commands
 | Command | Description | Permission |
 |---------|-------------|------------|
 | `/eventsurge info` | Show all active event info | eventsurge.participate |
@@ -68,38 +123,60 @@ Here’s an updated **README.md** draft for EventSurge v2.1.0, reflecting all th
 | `/eventsurge gui` | Open event selection GUI | eventsurge.admin |
 | `/eventsurge start <event>` | Start an event | eventsurge.admin |
 | `/eventsurge stop` | Stop all active events | eventsurge.admin |
-| `/eventsurge reload` | Reload configuration | eventsurge.admin |
-| `/eventsurge lang <lang>` | Change plugin language at runtime | eventsurge.admin |
+| `/eventsurge stop <event>` | Stop a specific event | eventsurge.admin |
+| `/eventsurge reload` | Reload configuration and languages | eventsurge.admin |
+| `/eventsurge active` | List all active events | eventsurge.participate |
 
 ---
 
-## Custom Event Builder (In-Chat)
-1. Open the GUI: `/eventsurge gui` and click "Create Custom Event"
-2. Follow the chat prompts to set:
-   - Title, description, type (mine, kill, place, etc), duration, prefix, objectives, rewards, etc.
-3. Supports multiple objectives, time limits, money/command rewards, and more.
-4. Event starts immediately after creation!
-
----
-
-## Configuration
+## 🛠️ Configuration
 <details>
 <summary>Click to view config.yml</summary>
 
 ```yaml
-# Basic plugin settings
-broadcast-prefix: "&6[EventSurge] &f"
+# EventSurge Configuration
+
 debug: false
-
-messages:
-  event-start: "&aEvent has started: %event%"
-  event-complete: "&a%player% has completed the %event% event!"
-  reward-announcement: "&a%player% has received &e%reward%!"
-
-allow-multiple-events: true  # Allow multiple events to run at the same time
-
-# Language and auto-extract
 language: "en"
+broadcast-prefix: "&6[EventSurge] &f"
+prefix-settings:
+  use-prefix-by-default: true
+  show-prefix-in-rewards: true
+  show-prefix-in-descriptions: false
+messages:
+  no-permission: "&cYou don't have permission to use this command!"
+  event-start: "&aEvent has started: %event%"
+  event-stop: "&cEvent has been stopped: %event%"
+  event-complete: "&a%player% has completed the %event% event!"
+  progress: "&7Progress: &e%current%&7/&e%target% &7%type%"
+  event-reminder: "&7Event in progress: &e%event% &7- %description%"
+  reward-announcement: "&a%player% has received &e%reward% &afor completing &6%event%! &7🎁"
+  time-remaining: "&e%event% &7has &e%time% &7minutes remaining!"
+  event-expired: "&cEvent &e%event% &chas expired!"
+announce-sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+reminder-sound: "BLOCK_NOTE_BLOCK_PLING"
+auto-start: true
+interval-seconds: 1800
+announcement-interval: 300
+allow-multiple-events: true
+gui:
+  title: "&8Event Manager"
+  rows: 3
+custom-events:
+  max-duration: 1440
+  max-objectives: 10
+  allow-money-rewards: true
+  allow-command-rewards: true
+multiple-events:
+  enabled: true
+  max-concurrent: 5
+  show-all-active: true
+debug-settings:
+  log-event-registration: true
+  log-progress-updates: true
+  log-reward-execution: true
+  log-permission-checks: true
+  log-configuration-loading: true
 ```
 </details>
 
@@ -108,33 +185,63 @@ language: "en"
 
 ```yaml
 # Example events
-diamond_miner:
-  type: mine
-  target: DIAMOND_ORE
-  amount: 10
-  title: "Diamond Miner"
-  description: "Mine 10 diamond ores!"
-  broadcast: true
-  reward:
-    command: "give %player% netherite_ingot 2"
-    display: "2x Netherite Ingot"
+events:
+  diamond_miner:
+    type: mine
+    target: DIAMOND_ORE
+    amount: 10
+    title: "💎 Diamond Miner"
+    description: "Mine 10 diamond ores to prove your mining skills!"
+    broadcast: true
+    use-prefix: true
+    duration-minutes: 30
+    allow-multiple: false
+    reward:
+      command: "give %player% netherite_ingot 2"
+      display: "2x Netherite Ingot"
+      money: 1000
 
-beacon_builder:
-  type: place
-  target: BEACON
-  amount: 3
-  title: "Beacon Builder"
-  description: "Place 3 beacons!"
-  broadcast: true
-  reward:
-    money: 10000
-    display: "$10000"
+  mixed_mining:
+    type: custom
+    target: mine
+    title: "🏔️ Mixed Mining Challenge"
+    description: "Mine different types of valuable ores!"
+    broadcast: true
+    use-prefix: true
+    duration-minutes: 120
+    allow-multiple: true
+    objectives:
+      DIAMOND_ORE: 5
+      EMERALD_ORE: 10
+      GOLD_ORE: 20
+    reward:
+      command: "give %player% netherite_block 1"
+      display: "1x Netherite Block"
+      money: 2000
+
+  community_mining:
+    type: custom
+    target: mine
+    title: "🏆 Community Mining Challenge"
+    description: "Work together to mine massive amounts of resources!"
+    broadcast: true
+    use-prefix: true
+    duration-minutes: 180
+    allow-multiple: true
+    objectives:
+      DIAMOND_ORE: 100
+      EMERALD_ORE: 200
+      GOLD_ORE: 500
+    reward:
+      command: "give %player% netherite_ingot 10"
+      display: "10x Netherite Ingot"
+      money: 5000
 ```
 </details>
 
 ---
 
-## API Usage
+## 🧩 API Usage
 ```java
 // Get the plugin instance
 EventSurge plugin = EventSurge.getInstance();
@@ -162,19 +269,21 @@ plugin.getEventManager().registerEvent(customEvent);
 
 ---
 
-## Migration Guide (from 1.x to 2.x)
-- Update your config.yml and events.yml to include new options (see above).
-- Use the new custom event builder for flexible event creation.
-- Set `allow-multiple-events: true` in config.yml to enable multiple concurrent events.
-- Vault is required for money rewards.
-- See roadmap.md for full changelog and future plans.
+## 🔄 Migration Guide (from 2.0.x or 1.x)
+- **Update your config.yml and events.yml** to include new options (see above)
+- **Set `allow-multiple-events: true`** in config.yml to enable multiple concurrent events
+- **Use the new custom event builder** for flexible event creation
+- **Vault is required for money rewards**
+- **Multi-language:** Set your language in config.yml
+- See `roadmap.md` for full changelog and future plans
 
 ---
 
-## Need Help?
+## ❓ Need Help?
 - [Documentation & Roadmap](./roadmap.md)
 - Example configs included in the plugin jar
 - Open an issue for support
+- Use `/eventsurge reload` to reload config
 
 ---
 
