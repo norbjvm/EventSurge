@@ -51,7 +51,7 @@ This document outlines the planned development path for EventSurge. Features and
 - [x] Improved error handling and validation
 - [x] Documentation and migration guide
 
-### Version 2.1.0 - Event Enhancement & Quality of Life (COMPLETED)
+### Version 2.1.0 - Event Enhancement & Quality of Life
 - [x] Double progress bug fix - No more double counting or duplicate listeners
 - [x] Global & Community Event Sync - Server-wide progress and rewards
 - [x] Multi-language support - English, Spanish, Indonesian, French, German
