@@ -2,134 +2,100 @@
 
 This document outlines the planned development path for EventSurge. Features and timelines may change based on community feedback and development priorities.
 
-## Current Version: 1.0.0
-- Basic event system
-- Mining, Killing, Fishing, and Crafting events
-- Simple progress tracking
-- Basic reward system
-- Command-based management
+## Current Version: 2.0.0
+- Powerful event system
+- Mining, Killing, Fishing, Crafting, and Block Placing events
+- Custom event builder (in-chat, with GUI trigger)
+- Multiple objectives per event
+- Time limits for events
+- Optional message prefix
+- Money and command rewards (Vault support)
+- Community events (server-wide progress)
+- Multiple concurrent events (configurable)
+- Enhanced progress tracking
+- Command-based and GUI management
+- Configurable via config.yml and events.yml
 
-## Short Term (Version 1.x)
+---
 
-### Version 1.1.0 - Event Enhancement
-- [ ] New Event Types
-  - [ ] Block placing events
-  - [ ] PvP events
-  - [ ] Trading events with villagers
-  - [ ] Exploration events
-- [ ] Enhanced Progress System
-  - [ ] Visual progress bar in chat
-  - [ ] Progress scoreboard
-  - [ ] Progress actionbar
-- [ ] Basic Leaderboard
-  - [ ] Top players per event
-  - [ ] All-time statistics
-  - [ ] Weekly/Monthly rankings
+## v1.1.0 New Event (2 July 2025 at 5:10 AM)
+- [x] Block Placing Events (NEW!) – Create events where players compete by placing blocks!
+- [x] More event examples: Beacon Builder, Farm Creator, Portal Master, and more.
+- [x] Real-time progress tracking and automatic in-game rewards.
+- [x] Enhanced event GUI manager with support for all event types.
+- [x] Player event history and achievement tracking.
+- [x] Debug mode for admins – detailed logging for easier troubleshooting.
+- [x] Improved error handling, validation, and performance.
 
-### Version 1.2.0 - Team System
-- [ ] Team Management
-  - [ ] Create/Delete teams
-  - [ ] Team invites
-  - [ ] Team chat
-- [ ] Team Events
-  - [ ] Shared progress
-  - [ ] Team rewards
-  - [ ] Team leaderboards
-- [ ] Team Permissions
-  - [ ] Team leaders
-  - [ ] Team moderators
+---
 
-### Version 1.3.0 - GUI Update
-- [ ] Event Manager GUI
-  - [ ] Event creation interface
-  - [ ] Event modification
-  - [ ] Event preview
-- [ ] Player GUI
-  - [ ] Event participation interface
-  - [ ] Progress tracking
-  - [ ] Reward preview
-- [ ] Admin Tools
-  - [ ] Event scheduler
-  - [ ] Quick start events
-  - [ ] Template system
+## Short Term (Version 2.x)
 
-## Medium Term (Version 1.x)
+### Version 2.0.0 - Major Feature Update (COMPLETED)
+- [x] Block placing events
+- [x] Custom event builder (in-chat, with GUI trigger)
+- [x] Multiple objectives per event
+- [x] Time limits for events
+- [x] Optional message prefix (configurable)
+- [x] Money rewards (Vault)
+- [x] Command rewards
+- [x] Community events (server-wide progress/rewards)
+- [x] Allow multiple events to run simultaneously (configurable)
+- [x] Improved GUI (event selection, custom event trigger)
+- [x] Enhanced progress/info commands (support multiple active events)
+- [x] Configurable via config.yml and events.yml
+- [x] Improved error handling and validation
+- [x] Documentation and migration guide
 
-### Version 1.4.0 - Advanced Rewards
-- [ ] Reward Types
-  - [ ] Item rewards
-  - [ ] Money rewards (Vault)
-  - [ ] Permission rewards
-  - [ ] Command rewards
-- [ ] Reward Features
-  - [ ] Multiple rewards
-  - [ ] Random rewards
-  - [ ] Tiered rewards
-  - [ ] Delayed rewards
+### Version 2.1.0 - Event Enhancement & Quality of Life
+- [ ] PvP events
+- [ ] Trading events with villagers
+- [ ] Exploration events
+- [ ] Visual progress bar in chat
+- [ ] Progress scoreboard
+- [ ] Progress actionbar
+- [ ] Basic Leaderboard (top players per event, all-time stats, weekly/monthly rankings)
+- [ ] More GUI improvements (event preview, event info, player progress)
+- [ ] Multi-language support
+- [ ] More detailed logging
+- [ ] Backup system
 
-### Version 1.5.0 - Event Sequences
-- [ ] Event Chain System
-  - [ ] Sequential events
-  - [ ] Conditional events
-  - [ ] Time-based events
-- [ ] Event Rotation
-  - [ ] Daily events
-  - [ ] Weekly events
-  - [ ] Monthly events
-- [ ] Event Prerequisites
-  - [ ] Level requirements
-  - [ ] Previous event completion
-  - [ ] Permission requirements
+### Version 2.2.0 - Team & Community Features
+- [ ] Team Management (create/delete teams, invites, chat)
+- [ ] Team Events (shared progress, team rewards, leaderboards)
+- [ ] Team Permissions (leaders, moderators)
+- [ ] Event Marketplace (share/download/rate events)
+- [ ] Server Network Support (cross-server events, global leaderboards)
 
-### Version 1.6.0 - Statistics & Analytics
-- [ ] Player Statistics
-  - [ ] Event participation
-  - [ ] Success rates
-  - [ ] Rewards earned
-- [ ] Server Statistics
-  - [ ] Most popular events
-  - [ ] Peak activity times
-  - [ ] Resource usage
-- [ ] Data Export
-  - [ ] CSV export
-  - [ ] JSON export
-  - [ ] Web dashboard
+## Medium Term (Version 2.x)
 
-## Long Term (Version 2.x)
+### Version 2.3.0 - Advanced Rewards & Event Sequences
+- [ ] Item rewards
+- [ ] Permission rewards
+- [ ] Multiple rewards per event
+- [ ] Random/tiered/delayed rewards
+- [ ] Event chain system (sequential/conditional/time-based events)
+- [ ] Event rotation (daily/weekly/monthly)
+- [ ] Event prerequisites (level, previous event, permission)
 
-### Version 2.0.0 - The Major Update
-- [ ] Developer API
-  - [ ] Event creation API
-  - [ ] Custom event types
-  - [ ] Hook system
-- [ ] Database Support
-  - [ ] MySQL support
-  - [ ] MongoDB support
-  - [ ] Redis caching
-- [ ] Web Integration
-  - [ ] Web panel
-  - [ ] REST API
-  - [ ] Discord bot integration
+### Version 2.4.0 - Statistics & Analytics
+- [ ] Player statistics (participation, success, rewards)
+- [ ] Server statistics (popular events, peak times, resource usage)
+- [ ] Data export (CSV, JSON, web dashboard)
 
-### Version 2.1.0 - Community Features
-- [ ] Event Marketplace
-  - [ ] Share events
-  - [ ] Download events
-  - [ ] Rate events
-- [ ] Server Network Support
-  - [ ] Cross-server events
-  - [ ] Global leaderboards
-  - [ ] Network synchronization
+## Long Term (Version 3.x)
 
-### Version 2.2.0 - Advanced Customization
-- [ ] Custom Events
-  - [ ] Event builder
-  - [ ] Custom conditions
-  - [ ] Custom rewards
-- [ ] Event Zones
-  - [ ] Area restrictions
-  - [ ] WorldGuard integration
-  - [ ] Custom world support
+### Version 3.0.0 - Developer API & Web Integration
+- [ ] Developer API (event creation, custom event types, hooks)
+- [ ] Database support (MySQL, MongoDB, Redis)
+- [ ] Web panel & REST API
+- [ ] Discord bot integration
+
+### Version 3.1.0 - Advanced Customization
+- [ ] Event builder (full GUI)
+- [ ] Custom conditions & rewards
+- [ ] Event zones (area restrictions, WorldGuard integration)
+- [ ] Custom world support
 
 ## Ongoing Improvements
 
@@ -140,19 +106,19 @@ This document outlines the planned development path for EventSurge. Features and
 - [ ] Caching system
 
 ### Quality of Life
+- [x] Better error handling
+- [x] More detailed logging
 - [ ] Multi-language support
-- [ ] Better error handling
-- [ ] More detailed logging
 - [ ] Backup system
 
 ### Documentation
-- [ ] API documentation
-- [ ] Developer guides
+- [x] API documentation (in progress)
+- [x] Developer guides
 - [ ] Video tutorials
-- [ ] Example configurations
+- [x] Example configurations
 
 ---
 
 Note: This roadmap is subject to change based on community feedback and development priorities. Features may be added, removed, or modified as needed.
 
-Last updated: 1 July 2025
+Last updated: 6 July 2025 
