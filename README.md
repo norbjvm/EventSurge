@@ -4,7 +4,12 @@
 </div>
 
 ---
-
+## 🆕 What's New in 2.1.1
+- **[FIX] Double Reward Announcement**: Reward/announcement messages will no longer appear twice for custom events or any other event type.
+- **[FIX] Event Handler Logic**: Custom event handler logic has been improved to prevent progress from being processed twice for a single action.
+- **[IMPROVEMENT] Stability**: Custom events are now more stable and will not cause double rewards even if there is overlap between targets/objectives.
+- **[INTERNAL] Code Clean-up**: Event handler conditions now use else-if to prevent duplicate calls.
+---
 ## 🚀 What's New in 2.1.0
 - **Double progress bug fixed**: No more double counting or duplicate listeners
 - **Global & Community Event Sync**: Server-wide progress and rewards, with new global event types
